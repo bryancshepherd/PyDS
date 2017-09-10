@@ -7,10 +7,11 @@
 # make use of.
 
 import pandas as pd
-import numpy as np
 
 # Bring in some toy data from the UCI
-# Machine Learning Repository. We'll use
+# Machine Learning Repository:
+# http://archive.ics.uci.edu/ml/index.php
+# We'll use
 # Abalone data from here:
 # https://archive.ics.uci.edu/ml/datasets/Abalone
 
@@ -50,6 +51,12 @@ snails.age.describe()
 # using the pandas `apply` method.
 
 def create_age_categories(x):
+    '''
+    Groups Abalone ages into 'Young', 'Middle-aged',
+    and 'Old'
+    :param x: Numeric series
+    :return: String series
+    '''
 
     if x<9.5:
         return 'Young'
@@ -84,6 +91,12 @@ snails.head()
 snails_method_2 = pd.read_csv('./Feature_Engineering/Data/snails.csv')
 
 def create_both_age_categories(df):
+    '''
+    Add age classifications to the Abalone dataset.
+
+    :param df: Dataframe with ring count series labelled 'Rings'
+    :return: Dataframe with categorical age features added
+    '''
 
     df['age']=df.Rings + 1.5
 
