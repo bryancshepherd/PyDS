@@ -1,11 +1,6 @@
 # If using Python 2.X don't forget:
 # from __future__ import division
 
-# Bring in some toy data.
-# Scikit-learn has a nice little
-# collection of toy datasets, we'll
-# make use of.
-
 import pandas as pd
 
 # Bring in some toy data from the UCI
