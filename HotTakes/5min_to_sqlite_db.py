@@ -12,7 +12,7 @@ df = pd.read_csv(url, names=names)
 
 # Step 1. Create a connection to the database. If 
 # the database doesn't exist, this creates it.
-conn = sqlite3.connect('snails.db')
+conn = sqlite3.connect('abalonedb.db')
 
 # Step 2. Write the dataframe to a database
 df.to_sql('snails', conn)

@@ -1,4 +1,3 @@
-import pandas as pd 
 import sklearn.datasets as datasets
 
 # Option 1. Pick a dataset from Scikit's dataset library
@@ -13,13 +12,13 @@ housing = datasets.fetch_california_housing()
 housing.data
 
 # Option 3. Create your own data with sklearn's helpers
-multilabel_df = datasets.make_multilabel_classification(n_samples=1000,
-                                                        n_features=10, 
-                                                        random_state=1234)
+multilabel_data = datasets.make_multilabel_classification(n_samples=1000,
+                                                          n_features=10,
+                                                          random_state=1234)
 
 # Option 4. OpenML database 
 from sklearn.datasets import fetch_openml
-ozone = fetch_openml(name='ozone-level-8hr')
+ozone = fetch_openml(name='ozone-level-8hr')  # see openml.org to get data details
 ozone.data
                                                       
 # More information and details on the datasets can be found here:
