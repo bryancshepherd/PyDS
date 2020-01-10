@@ -105,11 +105,13 @@ census_data.df.to_csv('/Users/bryanshepherd/Projects/CensusBrownBag/'
 # Go here: https://geocoding.geo.census.gov/
 
 # Technical Documentation
+# https://www.census.gov/data/developers/data-sets/Geocoding-services.html
+
 # https://www.census.gov/programs-surveys/geography/technical-documentation
 # /complete-technical-documentation/census-geocoder.html
 
-# More API Documentation
-# https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.pdf
+# Other Census APIs
+# https://www.census.gov/data/developers/data-sets.html
 
 
 
