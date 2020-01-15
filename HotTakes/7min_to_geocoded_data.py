@@ -6,7 +6,9 @@ import requests
 import pandas as pd
 
 # Pull in address data
-address_data_org = pd.read_csv('./HotTakes/data/census_geocoding/Addresses.csv', dtype = 'str', header=None)
+address_data_org = pd.read_csv('./HotTakes/data/census_geocoding/Addresses.csv',
+                               dtype = 'str',
+                               header=None)
 
 address_data = pd.DataFrame()
 
@@ -65,22 +67,6 @@ class CensusData:
                                  'tract_code',
                                  'block_code']
 
-    # Mostly needed for merging demographics on later
-    def _add_pretty_state_names(self):
-        # Bring in state identifier cross walk
-        state_abbrevs = pd.read_table(
-            './HotTakes/data/census_geocoding/acs/state_abbrevs.txt',
-            sep='|',
-            dtype='str')
-
-        state_abbrevs['STATE'] = state_abbrevs['STATE'].astype(int)
-
-        # Add state crosswalk data
-        self.df = self.df.merge(state_abbrevs,
-                                how='left',
-                                left_on='state_fips',
-                                right_on='STATE')
-
     # Comment for what the request will look like
     def geocode(self):
         self.files = {'addressFile': open(self.file_name, 'rb')}
@@ -90,15 +76,11 @@ class CensusData:
         self.df = pd.read_csv(io.StringIO(r.text),
                               header=None,
                               names=self.output_col_names)
-        self._add_pretty_state_names()
         return self.df
 
 census_data = CensusData(file_name)
 
 census_data.geocode()
-
-census_data.df.to_csv('/Users/bryanshepherd/Projects/CensusBrownBag/'
-                      'data/census_geocoding/prepped_data/new_geocoderesult.csv')
 
 # Additional Information:
 # Geocoding steps
