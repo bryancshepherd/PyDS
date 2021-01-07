@@ -7,7 +7,7 @@ html5lib==1.0.1
 isort==4.3.21
 joblib==0.13.2
 lazy-object-proxy==1.4.2
-lxml==4.4.1
+lxml==4.6.2
 mccabe==0.6.1
 numpy==1.17.2
 pandas==0.25.1
