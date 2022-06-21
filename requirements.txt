@@ -9,7 +9,7 @@ joblib==0.13.2
 lazy-object-proxy==1.4.2
 lxml==4.4.1
 mccabe==0.6.1
-numpy==1.17.2
+numpy==1.22.0
 pandas==0.25.1
 psycopg2-binary==2.8.3
 pycodestyle==2.5.0
